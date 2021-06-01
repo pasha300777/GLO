@@ -1,25 +1,46 @@
-let money;
-let income; 
-let addExpenses;
-let deposit;
-let mission; 
-let period; 
-let budgetDay;
+let money = 1000;
+let income = "freelance";; 
+let addExpenses = 'Internet, Taxi, Rent'; 
+let deposit = true;
+let mission = 10000; 
+let period = 12;
+let budgetDay = money/30;
 
-money = 1000;
-income = "freelance"; 
-addExpenses = 'Internet, Taxi, Rent'; 
-deposit = true;
-mission = 10000; 
-period = 12;
-budgetDay = money/30;
+console.log(typeof money);
+console.log(typeof income);
+console.log(typeof deposit);
 
-console.log(money+', '+income+', '+deposit);
-console.log(addExpenses.length);
-console.log(addExpenses.toLowerCase());
+addExpenses.toLowerCase();
+addExpenses.split([,])
+console.log(addExpenses);
 console.log("Период равен ("+period+") месяцев, "+"Цель заработать ("+ mission +") долларов");
 console.log(budgetDay);
 
+
+// let num = '266219';
+let num = 123445;
+let t = 1;
+
+for(let i=1; i<=num.length; i++){
+    num = num * i;
+    console.log('num is '+num);
+
+    console.log(num**3);
+    
+}   
+
+// for(let i=1; i<=3; i++){
+//     t = t*i;
+//     console.log('num is '+t);    
+// }   
+   
+// console.log(num);
+
+
+
+// console.log(num[0]);
+// console.log(num[1]);
+ 
 
 
 
