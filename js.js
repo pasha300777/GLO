@@ -16,21 +16,14 @@ console.log("Период равен ("+period+") месяцев, "+"Цель з
 console.log(budgetDay);
 
 
-// let num = '266219';
-// let num = 123445;
-// let t = 1;
+// let num = 266219;
 
-// for(let i=1; i<=num.length; i++){
+// for(let i=1; i<=arr.length; i++){
 //     num = num * i;
-//     console.log('num is '+num);
+//     console.log('num is '+arr);
 
 //     console.log(num**3);
     
-// }   
-
-// for(let i=1; i<=3; i++){
-//     t = t*i;
-//     console.log('num is '+t);    
 // }   
    
 // console.log(num);
