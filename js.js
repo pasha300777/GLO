@@ -10,7 +10,7 @@ money = 1000;
 income = "freelance"; 
 addExpenses = 'Internet, Taxi, Rent'; 
 deposit = true;
-mission = 10000; 
+mission = 20000; 
 period = 12;
 budgetDay = money/30;
 
