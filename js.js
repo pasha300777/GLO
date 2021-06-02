@@ -11,21 +11,21 @@ console.log(typeof money);
 console.log(typeof income);
 console.log(typeof deposit);
 console.log(addExpenses.length);
-console.log("Период равен "+period+" месяцев, "+"Цель заработать "+ mission +" долларов");
+// console.log("Период равен "+period+" месяцев, "+"Цель заработать "+ mission +" долларов");
 addExpenses.toLowerCase();
 let arr = addExpenses.split(',')
 console.log(arr);
 console.log(budgetDay);
 
-
+// money = prompt('Ваш месячный доход?');
 
 // console.log(money);
 console.log(addExpenses);
 deposit = confirm('Есть ли у вас депозит в банке?');
 let expenses1 = prompt('Введите 1-ю обязательную статью расходов?');
-let amount1 = +prompt('1) Во сколько это обойдется?');
+let amount1 = prompt(`Во сколько ${expenses1} обойдется??`);
 let expenses2 = prompt('Введите 2-ю обязательную статью расходов?');
-let amount2 = +prompt('2) Во сколько это обойдется?');
+let amount2 = prompt(`Во сколько ${expenses2} обойдется??`);
 let budgetMonth = (money-amount1-amount2);
 console.log("Месячный бюджет составляет: ("+budgetMonth+")");
 period = Math.ceil(mission/budgetMonth);
