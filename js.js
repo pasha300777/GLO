@@ -17,6 +17,11 @@ console.log(arr);
 console.log(budgetDay);
 
 
+
+
+
+
+
 // let num = 266219;
 // let str = String(num);
 // let arr2 = str.split('');
