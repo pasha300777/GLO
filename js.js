@@ -1,7 +1,7 @@
 'use strict';
-let money = 1000;
+let money = prompt('Ваш месячный доход?');
 let income = "freelance";
-let addExpenses = 'Internet, Taxi, Rent'; 
+let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'); 
 let deposit = true;
 let mission = 10000; 
 let period = 12;
@@ -11,22 +11,22 @@ console.log(typeof money);
 console.log(typeof income);
 console.log(typeof deposit);
 console.log(addExpenses.length);
-console.log("Период равен ("+period+") месяцев, "+"Цель заработать ("+ mission +") долларов");
+// console.log("Период равен "+period+" месяцев, "+"Цель заработать "+ mission +" долларов");
 addExpenses.toLowerCase();
 let arr = addExpenses.split(',')
 console.log(arr);
 console.log(budgetDay);
 
-money = prompt('Ваш месячный доход?');
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
+// money = prompt('Ваш месячный доход?');
+
 // console.log(money);
-// console.log(addExpenses);
+console.log(addExpenses);
 deposit = confirm('Есть ли у вас депозит в банке?');
-let expenses1 = +prompt('Введите обязательную статью расходов?');
-let expenses2 = +prompt('Введите обязательную статью расходов?');
-let amount1 = +prompt('Во сколько это обойдется?');
-let amount2 = +prompt('Во сколько это обойдется?');
-let budgetMonth = Number(money-expenses1-expenses2-amount1-amount2);
+let expenses1 = prompt('Введите 1-ю обязательную статью расходов?');
+let amount1 = prompt(`Во сколько ${expenses1} обойдется??`);
+let expenses2 = prompt('Введите 2-ю обязательную статью расходов?');
+let amount2 = prompt(`Во сколько ${expenses2} обойдется??`);
+let budgetMonth = (money-amount1-amount2);
 console.log("Месячный бюджет составляет: ("+budgetMonth+")");
 period = Math.ceil(mission/budgetMonth);
 console.log("Цель будет достигнута за ("+period+") месяцев");
