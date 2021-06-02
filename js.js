@@ -1,9 +1,9 @@
-const money;
-const income; 
-const addExpenses; 
-const deposit;
-const mission; 
-const period;
+let money;
+let income; 
+let addExpenses; 
+let deposit;
+let mission; 
+let period;
 
 
 alert("Test");
