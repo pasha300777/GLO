@@ -28,7 +28,7 @@ function getExpensesMonth (amount1, amount2) {
 };
 console.log('Расходы за месяц: ' + getExpensesMonth (amount1, amount2));
 
-console.log(addExpenses);
+console.log(arr);
 
 function getTargetMonth(a, b) {
   return Math.ceil(a / b);
@@ -41,7 +41,7 @@ function getAccumulatedMonth (a, b) {
 accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth(amount1, amount2));
 console.log('Cрок достижения цели в месяцах: '+getTargetMonth(mission, accumulatedMonth));
 
-budgetDay = accumulatedMonth / 30;
+budgetDay = Math.floor(accumulatedMonth / 30);
 console.log("Бюджет на день: "+budgetDay);
 
 let getStatusIncome = function(){
