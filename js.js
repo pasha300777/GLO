@@ -26,14 +26,14 @@ let amount2 = +prompt(`Во сколько ${expenses2} обойдется??`);
 function getExpensesMonth (amount1, amount2) {
   return amount1 + amount2;
 };
-console.log('Расходы за месяц: ' + getTargetMonth(mission, accumulatedMonth));
+console.log('Расходы за месяц: ' + getExpensesMonth (amount1, amount2));
 
 console.log(addExpenses);
 
 function getTargetMonth(a, b) {
   return Math.ceil(a / b);
 }
-console.log('Cрок достижения цели в месяцах: '+getTargetMonth());
+console.log('Cрок достижения цели в месяцах: '+getTargetMonth(mission, accumulatedMonth));
 
 function getAccumulatedMonth (a, b) {
   return a - b;
