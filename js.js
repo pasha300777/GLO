@@ -15,7 +15,7 @@ console.log(addExpenses.length);
 addExpenses.toLowerCase();
 let arr = addExpenses.split(',')
 console.log(arr);
-console.log(budgetDay);
+// console.log(budgetDay);
 
 // money = prompt('Ваш месячный доход?');
 
