@@ -33,13 +33,13 @@ console.log(addExpenses);
 function getTargetMonth(a, b) {
   return Math.ceil(a / b);
 }
-console.log('Cрок достижения цели в месяцах: '+getTargetMonth(mission, accumulatedMonth));
 
 function getAccumulatedMonth (a, b) {
   return a - b;
 };
 
-accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth);
+accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth(amount1, amount2));
+console.log('Cрок достижения цели в месяцах: '+getTargetMonth(mission, accumulatedMonth));
 
 budgetDay = accumulatedMonth / 30;
 console.log("Бюджет на день: "+budgetDay);
@@ -57,3 +57,8 @@ let getStatusIncome = function(){
 };
 
 console.log(getStatusIncome());
+
+
+
+
+
