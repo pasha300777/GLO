@@ -15,8 +15,8 @@ showTypeOf(money);
 showTypeOf(income);
 showTypeOf(deposit);
 
-addExpenses.toLowerCase();
 let arr = addExpenses.split(',')
+let lowerCased = arr.map(arr => arr.toLowerCase());
 
 let expenses1 = prompt('Введите 1-ю обязательную статью расходов?');
 let amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
@@ -28,7 +28,7 @@ function getExpensesMonth (amount1, amount2) {
 };
 console.log('Расходы за месяц: ' + getExpensesMonth (amount1, amount2));
 
-console.log(arr);
+console.log(lowerCased);
 
 function getTargetMonth(a, b) {
   return Math.ceil(a / b);
