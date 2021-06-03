@@ -58,37 +58,5 @@ let getStatusIncome = function(){
   }
 };
 
-
-console.log(getStatusIncome());
-
-function getTargetMonth(a, b) {
-  return Math.ceil(a/b);
-}
-// console.log(getTargetMonth());
-
-function getAccumulatedMonth (a, b) {
-  return a-b;
-};
-// getAccumulatedMonth();
-
-
-accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth);
-console.log("Месячный бюджет составляет: "+accumulatedMonth);
-budgetDay = accumulatedMonth/30;
-console.log("Дневной бюджет составляет: "+budgetDay);
-
-let getStatusIncome = function(){
-  if(budgetDay>=1200){
-    return('У вас высокий уровень дохода');
-  }else if(budgetDay<=1200 && budgetDay>=600){
-    return('У вас средний уровень дохода');
-  }else if(budgetDay<=600 && budgetDay>=0){
-    return('К сожалению у вас уровень дохода ниже среднего');
-  }else {
-    return('Что то пошло не так');
-  }
-};
-
-
 console.log(getStatusIncome());
 
