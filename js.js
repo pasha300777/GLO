@@ -39,7 +39,7 @@ let getExpensesMonth = function(){
     if (i===0){
       expenses1 = prompt('Введите 1-ю обязательную статью расходов?');
       amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
-      while (isNaN(amount1)){
+      while (isNaN(amount1)){ 
         amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
       }
     } else if (i === 1) {
@@ -53,9 +53,6 @@ let getExpensesMonth = function(){
   return amount1 + amount2;
 };
 
-function getExpensesMonthSum (amount1, amount2) {
-  return amount1 + amount2;
-};
 let expensesAmount = getExpensesMonth (amount1, amount2);
 console.log('Расходы за месяц: ' + expensesAmount);
 
