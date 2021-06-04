@@ -39,13 +39,13 @@ let getExpensesMonth = function(){
     if (i===0){
       expenses1 = prompt('Введите 1-ю обязательную статью расходов?');
       amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
-      while (isNaN(amount1)){ 
+      while (!isNumber(amount1) || amount1 == ''){ 
         amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
       }
     } else if (i === 1) {
       expenses2 = prompt('Введите 2-ю обязательную статью расходов?');
       amount2 = +prompt(`Во сколько ${expenses2} обойдется??`);
-      while (isNaN(amount2)){
+      while (!isNumber(amount2) || amount2 == ''){
         amount2 = +prompt(`Во сколько ${expenses2} обойдется??`);
       }
     }
