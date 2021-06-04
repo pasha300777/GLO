@@ -14,6 +14,9 @@ let budgetDay;
 let start = function() {
   do {
     money = +prompt('Ваш месячный доход?');
+    while (!isNumber(money) || money == ''){ 
+      money = +prompt('Ваш месячный доход?');
+      }
   }
   while (!isNumber(money)){ 
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'); 
