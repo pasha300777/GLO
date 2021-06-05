@@ -14,7 +14,7 @@ let budgetDay;
 let start = function() {
   do {
     money = +prompt('Ваш месячный доход?', '1000');
-    while (!isNumber(money) || money == ''){ 
+    while (!isNumber(money)){ 
       money = +prompt('Ваш месячный доход?');
       }
   }
@@ -41,12 +41,16 @@ let expenses = [];
 function getExpensesMonth() {
   let sum = 0;
   for (let i = 0; i < 2; i++) {
-    expenses[i] = prompt('Введите обязательную статью расходов', 'Exp');
-    sum += +prompt(`Во сколько это обойдется?`, '11');
+    let amount;
+    expenses[i] = +prompt('Введите обязательную статью расходов');
+    do {
+      amount = +prompt('Сколько это будет стоить?');
+    } while (!isNumber(amount));
+    
+    sum += +amount;
   }
-  console.log(expenses);
   return sum;
-};
+}
 
 let expensesAmount = getExpensesMonth ();
 console.log('Расходы за месяц: ' + expensesAmount);
