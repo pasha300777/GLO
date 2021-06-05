@@ -13,12 +13,12 @@ let budgetDay;
 
 let start = function() {
   do {
-    money = +prompt('Ваш месячный доход?', '1000');
+    money = prompt('Ваш месячный доход?', '1000');
     
   } while (!isNumber(money))
     
 };
-
+start()
 
 deposit = confirm('Есть ли у вас депозит в банке?');
 
@@ -38,9 +38,9 @@ function getExpensesMonth() {
   let sum = 0;
   for (let i = 0; i < 2; i++) {
     let amount;
-    expenses[i] = prompt('Введите обязательную статью расходов');
+    expenses[i] = prompt('Введите обязательную статью расходов', 'AAA');
     do {
-      amount = prompt('Сколько это будет стоить?');
+      amount = prompt('Сколько это будет стоить?', '11');
     } while (!isNumber(amount));
     
     sum += +amount;
