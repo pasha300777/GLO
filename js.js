@@ -4,7 +4,7 @@ let isNumber = function(n) {
 }
 let money;
 let income = "freelance";
-let addExpenses;
+let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'FFF,ffff,fff'); 
 let deposit;
 let mission = 10000; 
 let period = 12;
@@ -14,15 +14,11 @@ let budgetDay;
 let start = function() {
   do {
     money = +prompt('Ваш месячный доход?', '1000');
-    while (!isNumber(money)){ 
-      money = +prompt('Ваш месячный доход?');
-      }
-  }
-  while (!isNumber(money)){ 
-    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Start, Start, Start'); 
-  }
+    
+  } while (!isNumber(money))
+    
 };
-start();
+
 
 deposit = confirm('Есть ли у вас депозит в банке?');
 
@@ -42,9 +38,9 @@ function getExpensesMonth() {
   let sum = 0;
   for (let i = 0; i < 2; i++) {
     let amount;
-    expenses[i] = +prompt('Введите обязательную статью расходов');
+    expenses[i] = prompt('Введите обязательную статью расходов');
     do {
-      amount = +prompt('Сколько это будет стоить?');
+      amount = prompt('Сколько это будет стоить?');
     } while (!isNumber(amount));
     
     sum += +amount;
