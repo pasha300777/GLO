@@ -1,74 +1,68 @@
 'use strict';
-let money = +prompt('Ваш месячный доход?');
-let income = "freelance";
-let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'); 
-let deposit = confirm('Есть ли у вас депозит в банке?');
-let mission = 10000; 
-let period = 12;
-let accumulatedMonth;
-let budgetDay;
-
-let showTypeOf = function(data) {
-  console.log(typeof (data));
-};
-showTypeOf(money);
-showTypeOf(income);
-showTypeOf(deposit);
-
-
-let arr = addExpenses.split(',')
-let lowerCased = arr.map(arr => arr.toLowerCase());
-let expenses1 = prompt('Введите 1-ю обязательную статью расходов?');
-let amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
-let expenses2 = prompt('Введите 2-ю обязательную статью расходов?');
-let amount2 = +prompt(`Во сколько ${expenses2} обойдется??`);
-
-function getExpensesMonth (amount1, amount2) {
-  return amount1 + amount2;
-};
-console.log('Расходы за месяц: ' + getExpensesMonth (amount1, amount2));
-
-console.log(lowerCased);
-
-function getTargetMonth(a, b) {
-  return Math.ceil(a / b);
+let isNumber = function(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-function getAccumulatedMonth (a, b) {
-  return a - b;
-};
 
-accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth(amount1, amount2));
-console.log('Cрок достижения цели в месяцах: '+getTargetMonth(mission, accumulatedMonth));
+let number;
+let rand = function(number){
+  number = +confirm('Крутите барабан');
+  return Math.random(number);
+}
+rand(number);
+let attempt = +prompt('Угадай число от 1 до 100');
+console.log(number, attempt)
 
-budgetDay = Math.floor(accumulatedMonth / 30);
-console.log("Бюджет на день: "+budgetDay);
-
-let getStatusIncome = function(){
-  if(budgetDay>=1200){
-    return('У вас высокий уровень дохода');
-  }else 
-  if(budgetDay<=1200 && budgetDay>=600){
-    return('У вас средний уровень дохода');
-  }else 
-  if(budgetDay<=600 && budgetDay>=0){
-    return('К сожалению у вас уровень дохода ниже среднего');
-  }else {
-    return('Что то пошло не так');
-  }
-};
-
-if(budgetDay>=1200){
-  return('У вас высокий уровень дохода');
-}else if(budgetDay<=1200 && budgetDay>=600){
+if (attempt == number){
+  alert('Поздравляю, Вы угадали!!!'); 
+  alert('Игра окончена'); 
+  console.log(number, attempt)
+}else if (attempt < number) {
+  +prompt('Загаданное число меньше', 'Введи число!');
+} else if (attempt > number) {
+  +prompt('Загаданное число больше', 'Введи число!');
+}if (!isNumber(attempt)) {
+  +prompt('Введи число!', 'Введи число!');
+} 
 
 
 
 
 
-console.log(getStatusIncome());
+
+// function randomInteger(min, max) {
+// let rand = min + Math.random() * (max + 1 - min);
+//   return Math.floor(rand); 
+// };
+// let number = randomInteger(1, 7)
 
 
+// function ygaday(){
+// let i = 1;
+// let d = [];
+// while(true){
+ 
+//  let con = +prompt('Угадайте число от 1 до 100', '');
 
+// if( i >= 10 ){
+// console.log( `${con} и ${number}` )
+// d.push(con);
+// alert('10 попытки закончились ...');
+// console.log( `Вы вели числа ${ d } правильное число ${number}` );
+// break
+// };
 
+// if( con == null || con == ''){
+//   break 
+// } else if( number == con ){
+//   alert( `Вы угадали правильное число ${number}` )
+//   break
+// } else if( con == new Number(con) && con <= 7){
+//     d.push(con);
+//    ++i
+//   console.log( `${con} и ${number}` )
+// }; 
+// };
+// };
 
+// ygaday();
