@@ -13,13 +13,13 @@ let budgetDay;
 
 let start = function() {
   do {
-    money = +prompt('Ваш месячный доход?');
+    money = +prompt('Ваш месячный доход?', '1000');
     while (!isNumber(money) || money == ''){ 
       money = +prompt('Ваш месячный доход?');
       }
   }
   while (!isNumber(money)){ 
-    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'); 
+    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Start, Start, Start'); 
   }
 };
 start();
@@ -36,27 +36,19 @@ showTypeOf(deposit);
 let arr = addExpenses.split(',')
 let lowerCased = arr.map(arr => arr.toLowerCase());
 
-let expenses1, expenses2, amount1, amount2;
-let getExpensesMonth = function(){
-    for (let i = 0; i < 2; i++) {
-    if (i===0){
-      expenses1 = prompt('Введите 1-ю обязательную статью расходов?');
-      amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
-      while (!isNumber(amount1) || amount1 == ''){ 
-        amount1 = +prompt(`Во сколько ${expenses1} обойдется??`);
-      }
-    } else if (i === 1) {
-      expenses2 = prompt('Введите 2-ю обязательную статью расходов?');
-      amount2 = +prompt(`Во сколько ${expenses2} обойдется??`);
-      while (!isNumber(amount2) || amount2 == ''){
-        amount2 = +prompt(`Во сколько ${expenses2} обойдется??`);
-      }
-    }
+let expenses = [];
+
+function getExpensesMonth() {
+  let sum = 0;
+  for (let i = 0; i < 2; i++) {
+    expenses[i] = prompt('Введите обязательную статью расходов', 'Exp');
+    sum += +prompt(`Во сколько это обойдется?`, '11');
   }
-  return amount1 + amount2;
+  console.log(expenses);
+  return sum;
 };
 
-let expensesAmount = getExpensesMonth (amount1, amount2);
+let expensesAmount = getExpensesMonth ();
 console.log('Расходы за месяц: ' + expensesAmount);
 
 console.log(lowerCased);
