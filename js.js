@@ -1,68 +1,42 @@
-'use strict';
+  'use strict';
 let isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 
-let number;
-let rand = function(number){
-  number = +confirm('Крутите барабан');
-  return Math.random(number);
-}
-rand(number);
-let attempt = +prompt('Угадай число от 1 до 100');
-console.log(number, attempt)
+let number = 0;
+let attempt = 0;
+let firstAttempt = alert('Угадай число от 1 до 100', 'Введи число!');
 
-if (attempt == number){
+let bott = function(){
+  number = Math.ceil(Math.random() * 100);
+  return number;
+};
+bott();
+console.log('number is: ' + number + 'attempt is: ' + attempt);
+
+let tryAgain = function(){
+  attempt = +prompt('Введи число!', 'Введи число!');
+  return tryAgain();
+};
+tryAgain();
+console.log('number is: ' + number + ' attempt is: ' + attempt);
+
+
+if(attempt === null){
+  alert('Игра окончена');
+}else if(attempt === number){
   alert('Поздравляю, Вы угадали!!!'); 
   alert('Игра окончена'); 
-  console.log(number, attempt)
+  console.log(number, attempt);
+}else if(!isNumber(attempt)) {
+  tryAgain(number);
 }else if (attempt < number) {
-  +prompt('Загаданное число меньше', 'Введи число!');
-} else if (attempt > number) {
-  +prompt('Загаданное число больше', 'Введи число!');
-}if (!isNumber(attempt)) {
-  +prompt('Введи число!', 'Введи число!');
-} 
-
-
-
-
-
-
-// function randomInteger(min, max) {
-// let rand = min + Math.random() * (max + 1 - min);
-//   return Math.floor(rand); 
-// };
-// let number = randomInteger(1, 7)
-
-
-// function ygaday(){
-// let i = 1;
-// let d = [];
-// while(true){
- 
-//  let con = +prompt('Угадайте число от 1 до 100', '');
-
-// if( i >= 10 ){
-// console.log( `${con} и ${number}` )
-// d.push(con);
-// alert('10 попытки закончились ...');
-// console.log( `Вы вели числа ${ d } правильное число ${number}` );
-// break
-// };
-
-// if( con == null || con == ''){
-//   break 
-// } else if( number == con ){
-//   alert( `Вы угадали правильное число ${number}` )
-//   break
-// } else if( con == new Number(con) && con <= 7){
-//     d.push(con);
-//    ++i
-//   console.log( `${con} и ${number}` )
-// }; 
-// };
-// };
-
-// ygaday();
+  alert('Загаданное число больше');
+  tryAgain(number);
+}else if (attempt > number) {
+  alert('Загаданное число меньше');
+  tryAgain(number);
+}else {
+  tryAgain(number);
+};                                                                                 
