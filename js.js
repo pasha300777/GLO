@@ -29,6 +29,7 @@ let appData = {
     appData.addExpenses = addExpenses.toLowerCase().split(',');
     appData.deposit = confirm('Есть ли у вас депозит в банке?');
     console.log(appData.addExpenses);
+    
   },
 
   getExpensesMonth: function(){
