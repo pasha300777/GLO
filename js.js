@@ -6,7 +6,7 @@ let money;
 let start = function() {
   do {
     money = prompt('Ваш месячный доход?', '1000');
-  } while (!isNumber(money))
+  } while (!isNumber(money));
 };
 start()
 
@@ -23,10 +23,10 @@ let appData = {
   budgetMonth: 0, 
   expensesMonth: 0,
   asking: function(){
-    let addFirstExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'FFF,ffff,fff'); 
-    appData.addFirstExpenses = addFirstExpenses.toLowerCase().split(',');
+    appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'FFF,ffff,fff'); 
+    appData.addExpenses = appData.addExpenses.toLowerCase().split(',');
     appData.deposit = confirm('Есть ли у вас депозит в банке?');
-    console.log(appData.addFirstExpenses);
+    console.log(appData.addExpenses);
 
     for (let i = 0; i < 2; i++) {
 
@@ -88,5 +88,5 @@ appData.getStatusIncome();
 console.log(appData.getStatusIncome());
 console.log('Наша программа включает в себя данные: ');
 for (let key in appData) {
-  console.log('Свойство: ' + key + 'Значение: ' + appData[key]);
+  console.log('Свойство: ' + key + ', Значение: ' + appData[key]);
 };
