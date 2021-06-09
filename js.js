@@ -75,7 +75,6 @@ let appData = {
     }else if(appData.budgetDay <= 600 && appData.budgetDay >= 0){
       return('К сожалению у вас уровень дохода ниже среднего');
     }else {
-      console.log('Что то пошло не та222');
       return('Что то пошло не так');
     };
   },
@@ -87,6 +86,8 @@ appData.getBudget();
 appData.getTargetMonth();
 appData.getStatusIncome();
 
+console.log('Наша программа включает в себя данные: ');
 for (let key in appData) {
-  console.log('Наша программа включает в себя данные: ' + key + appData[key]);
+  // appData += appData[key];
+  console.log(key);
 };
