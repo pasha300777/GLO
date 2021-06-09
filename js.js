@@ -85,9 +85,8 @@ appData.getExpensesMonth();
 appData.getBudget();
 appData.getTargetMonth();
 appData.getStatusIncome();
-
+console.log(appData.getStatusIncome());
 console.log('Наша программа включает в себя данные: ');
 for (let key in appData) {
-  // appData += appData[key];
-  console.log(key);
+  console.log('Свойство: ' + key + 'Значение: ' + appData[key]);
 };
