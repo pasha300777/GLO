@@ -29,7 +29,7 @@ let appData = {
       let itemIncome;
       do {
         itemIncome = prompt('Какой у вас дополнительный заработок?', 'Танцую Jazz');
-      } while (isNumber(itemIncome) || itemIncome === '');
+      } while (isNumber(itemIncome) || itemIncome === '' || itemIncome.trim() === '');
       let cashIncome;
       do {
         cashIncome = prompt('Сколько  в месяц зарабатываете?', 2000);
@@ -40,19 +40,20 @@ let appData = {
     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'пить, курить, Гонять балду'); 
     appData.addExpenses = addExpenses.split(', ');
     appData.addExpenses = appData.addExpenses.map(item => item.toLowerCase().trim().slice(0, 1).toUpperCase() + item.slice(1));
-    console.log(appData.addExpenses);
+    console.log(addExpenses);
 
     appData.deposit = confirm('Есть ли у вас депозит в банке?');
 
     for (let i = 0; i < 2; i++) {
       let question;
       do {
-        question = prompt('Введите обязательную статью расходов № ', 'AAA' + (+i + 1));
-      } while (isNumber(question) || question === '');
+        question = prompt('Введите обязательную статью расходов', 'AAA' + (+i + 1));
+      } while (isNumber(question) || question === '' || question.trim() === '');
       let cash;
       do {
         cash = +prompt('Сколько это будет стоить?', '11');
       } while (!isNumber(cash) || cash <= 0);
+
         appData.expenses[question] = cash;
     }  
     console.log('expenses: {');
