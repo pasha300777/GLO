@@ -37,7 +37,10 @@ let appData = {
         appData.income[itemIncome] = cashIncome;
     }
     let addExpenses;
-    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'пить, курить, Гонять балду'); 
+    do {
+      addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'пить, курить, Гонять балду'); 
+    } while (isNumber(addExpenses) || addExpenses === '' || addExpenses.trim() === '');
+
     appData.addExpenses = addExpenses.split(', ');
     appData.addExpenses = appData.addExpenses.map(item => item.toLowerCase().trim().slice(0, 1).toUpperCase() + item.slice(1));
     console.log(addExpenses);
@@ -126,7 +129,7 @@ appData.calcSavedMoney();
 console.log(appData.getStatusIncome());
 
 
-console.log('Возможные расходы: ' + appData.addExpenses);
+console.log('Возможные расходы: ');
 for (let key in appData.addExpenses) {
   console.log('Свойство: ' + key + ', Значение: ' + appData.addExpenses[key]);
 };
