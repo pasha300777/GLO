@@ -38,8 +38,8 @@ let appData = {
     }
     
     appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'пить, курить, Гонять балду'); 
-    let dataStr = appData.addExpenses.toString().toUpperCase(0).split(',');
-    console.log(dataStr);
+    appData.addExpenses = appData.addExpenses.map(item => item.toLowerCase().trim().slice(0, 1).toUpperCase() + item.slice(1));
+    console.log(appData.addExpenses);
 
     appData.deposit = confirm('Есть ли у вас депозит в банке?');
 
@@ -124,8 +124,8 @@ appData.calcSavedMoney();
 console.log(appData.getStatusIncome());
 
 
-// console.log('Возможные расходы: ' + appData,addExpenses);
-// for (let key in appData.addExpenses) {
-//   console.log('Свойство: ' + key + ', Значение: ' + appData.income[key]);
-// };
+console.log('Возможные расходы: ' + appData,addExpenses);
+for (let key in appData.addExpenses) {
+  console.log('Свойство: ' + key + ', Значение: ' + appData.income[key]);
+};
 
