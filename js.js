@@ -43,7 +43,7 @@ let appData = {
 
     appData.addExpenses = addExpenses.split(', ');
     appData.addExpenses = appData.addExpenses.map(item => item.toLowerCase().trim().slice(0, 1).toUpperCase() + item.slice(1));
-    console.log(appData.addExpenses);
+    console.log(appData.addExpenses.join());
 
     appData.deposit = confirm('Есть ли у вас депозит в банке?');
 
