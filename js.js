@@ -1,14 +1,14 @@
 'use strict';
 let isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
-}
+};
 let money;
 let start = function() {
   do {
     money = prompt('Ваш месячный доход?', '1000');
   } while (!isNumber(money));
 };
-start()
+start();
 
 let appData = {
   income: {},
@@ -36,8 +36,9 @@ let appData = {
       } while (!isNumber(cashIncome) || cashIncome <= 0);
         appData.income[itemIncome] = cashIncome;
     }
-    
-    appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'пить, курить, Гонять балду'); 
+    let addExpenses;
+    addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'пить, курить, Гонять балду'); 
+    appData.addExpenses = addExpenses.split(', ');
     appData.addExpenses = appData.addExpenses.map(item => item.toLowerCase().trim().slice(0, 1).toUpperCase() + item.slice(1));
     console.log(appData.addExpenses);
 
@@ -111,7 +112,7 @@ let appData = {
 
     return appData.budgetMonth * appData.period;
   }
-}
+};
 
 appData.asking();
 appData.getExpensesMonth();
@@ -124,8 +125,8 @@ appData.calcSavedMoney();
 console.log(appData.getStatusIncome());
 
 
-console.log('Возможные расходы: ' + appData,addExpenses);
+console.log('Возможные расходы: ' + appData.addExpenses);
 for (let key in appData.addExpenses) {
-  console.log('Свойство: ' + key + ', Значение: ' + appData.income[key]);
+  console.log('Свойство: ' + key + ', Значение: ' + appData.addExpenses[key]);
 };
 
