@@ -2,6 +2,21 @@
 let isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
+
+let startBtn;
+let btnPlusIncomeAdd;
+let btnPlusExpensesAdd;
+let depositCheckmark;
+let resultValue;
+let salaryAmount;
+let incomeTitle;
+let incomeAmount;
+let expensesTitle;
+let expensesAmount;
+let additionalExpensesItem;
+let targetAmount;
+let periodSelect;
+
 let money;
 let start = function() {
   do {
@@ -133,35 +148,34 @@ for (let key in appData.addExpenses) {
   console.log('Свойство: ' + key + ', Значение: ' + appData.addExpenses[key]);
 };
 
-let start2 = document.getElementById('start');
-console.log(start2);
+startBtn = document.getElementById('start');
+console.log(startBtn);
 
-let btnPlusIncomeAdd = document.getElementsByTagName('btn_plus income_add');
+btnPlusIncomeAdd = document.getElementsByTagName('button' [0]);
 console.log(btnPlusIncomeAdd);
-let btnPlusExpensesAdd = document.getElementsByTagName('.btn_plus expenses_add');
+btnPlusExpensesAdd = document.getElementsByTagName('button' [1]);
 console.log(btnPlusExpensesAdd);
-let depositCheckmark = document.querySelector('.deposit-checkmark');
-console.log(depositCheckmark);
-let additionalIncomeItem = document.querySelectorAll('#additional_income-item');
-console.log(additionalIncomeItem);
 
-let resultValue = document.getElementsByClassName('.result');
+depositCheckmark = document.querySelector('#deposit-check');
+console.log(depositCheckmark);
+
+resultValue = document.getElementsByClassName('.result');
 console.log(resultValue);
 
-let salaryAmount = document.querySelector('.salary-amount');
+salaryAmount = document.querySelector('.salary-amount');
 console.log(salaryAmount);
-let incomeTitle = document.querySelector('[class="income-title"]');
+incomeTitle = document.querySelector('input.income-title')
 console.log(incomeTitle);
-let incomeAmount = document.querySelector('.income-amount');
+incomeAmount = document.querySelector('.income-amount');
 console.log(incomeAmount);
-let expensesTitle = document.querySelector('[class="expenses-title"]');
+expensesTitle = document.querySelector('input.expenses-title')
 console.log(expensesTitle);
-let expensesAmount = document.querySelector('.expenses-amount');
+expensesAmount = document.querySelector('.expenses-amount');
 console.log(expensesAmount);
-let additionalExpensesItem = document.querySelector('.additional_expenses-item');
+additionalExpensesItem = document.querySelector('.additional_expenses-item');
 console.log(additionalExpensesItem);
-let targetAmount = document.querySelector('.target-amount');
+targetAmount = document.querySelector('.target-amount');
 console.log(targetAmount);
-let periodSelect = document.querySelector('.period-select');
+periodSelect = document.querySelector('.period-select');
 console.log(periodSelect);
 
