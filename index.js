@@ -4,10 +4,10 @@ let isNumber = function(n) {
 };
 
 let startBtn = document.getElementById('start'), 
-btnPlusIncomeAdd = document.getElementsByTagName('button' [0]), 
-btnPlusExpensesAdd = document.getElementsByTagName('button' [1]), 
+btnPlusIncomeAdd = document.getElementsByTagName('button') [0], 
+btnPlusExpensesAdd = document.getElementsByTagName('button') [1], 
 depositCheckmark = document.querySelector('#deposit-check'), 
-resultValue = document.getElementsByClassName('.result'), 
+resultValue = document.getElementsByClassName('.result') , 
 salaryAmount = document.querySelector('.salary-amount'), 
 incomeTitle = document.querySelector('input.income-title'), 
 incomeAmount = document.querySelector('.income-amount'), 
