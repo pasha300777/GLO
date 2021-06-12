@@ -17,6 +17,20 @@ additionalExpensesItem = document.querySelector('.additional_expenses-item'),
 targetAmount = document.querySelector('.target-amount'), 
 periodSelect = document.querySelector('.period-select');
 
+console.log(startBtn);
+console.log(btnPlusIncomeAdd);
+console.log(btnPlusExpensesAdd);
+console.log(depositCheckmark);
+console.log(resultValue);
+console.log(salaryAmount);
+console.log(incomeTitle);
+console.log(incomeAmount);
+console.log(expensesTitle);
+console.log(expensesAmount);
+console.log(additionalExpensesItem);
+console.log(targetAmount);
+console.log(periodSelect);
+
 let money;
 let start = function() {
   do {
