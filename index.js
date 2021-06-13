@@ -2,6 +2,48 @@
 let isNumber = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
+
+let startBtn = document.getElementById('start'), 
+btnPlusIncomeAdd = document.getElementsByTagName('button') [0], 
+btnPlusExpensesAdd = document.getElementsByTagName('button') [1], 
+depositCheckmark = document.querySelector('#deposit-check'),  
+salaryAmount = document.querySelector('.salary-amount'), 
+incomeTitle = document.querySelector('input.income-title'), 
+incomeAmount = document.querySelector('.income-amount'), 
+expensesTitle = document.querySelector('input.expenses-title'), 
+expensesAmount = document.querySelector('.expenses-amount'), 
+additionalExpensesItem = document.querySelector('.additional_expenses-item'), 
+targetAmount = document.querySelector('.target-amount'), 
+periodSelect = document.querySelector('.period-select'),
+budgetMonthValue = document.getElementsByClassName('budget_month-value'), 
+budgetDayValue = document.getElementsByClassName('budget_day-value'), 
+expensesMonthValue = document.getElementsByClassName('expenses_month-value'), 
+additionalIncomeValue = document.getElementsByClassName('additional_income-value'), 
+additionalExpensesValue = document.getElementsByClassName('additional_expenses-value'), 
+incomePeriodValue = document.getElementsByClassName('income_period-value'), 
+targetMonthValue = document.getElementsByClassName('target_month-value');
+
+console.log(startBtn);
+console.log(btnPlusIncomeAdd);
+console.log(btnPlusExpensesAdd);
+console.log(depositCheckmark);
+console.log(salaryAmount);
+console.log(incomeTitle);
+console.log(incomeAmount);
+console.log(expensesTitle);
+console.log(expensesAmount);
+console.log(additionalExpensesItem);
+console.log(targetAmount);
+console.log(periodSelect);
+
+console.log(budgetMonthValue);
+console.log(budgetDayValue);
+console.log(expensesMonthValue);
+console.log(additionalIncomeValue);
+console.log(additionalExpensesValue);
+console.log(incomePeriodValue);
+console.log(targetMonthValue);
+
 let money;
 let start = function() {
   do {
@@ -132,49 +174,5 @@ console.log('Возможные расходы: ');
 for (let key in appData.addExpenses) {
   console.log('Свойство: ' + key + ', Значение: ' + appData.addExpenses[key]);
 };
-
-
-let start2 = document.getElementById('start');
-console.log(start);
-
-let btnPlusIncomeAdd = document.getElementsByTagName('btn_plus income_add');
-console.log(btnPlusIncomeAdd);
-
-let btnPlusExpensesAdd = document.getElementsByTagName('.btn_plus expenses_add');
-console.log(btnPlusExpensesAdd);
-
-let depositCheckmark = document.querySelector('.deposit-checkmark');
-console.log(depositCheckmark);
-
-let additionalIncomeItem = document.querySelectorAll('#additional_income-item');
-console.log(additionalIncomeItem);
-
-
-let resultValue = document.getElementsByClassName('.result');
-console.log(resultValue);
-
-let salaryAmount = document.querySelector('.salary-amount');
-console.log(salaryAmount);
-
-let incomeTitle = document.querySelector('.income-title');
-console.log(incomeTitle);
-
-let incomeAmount = document.querySelector('.income-amount');
-console.log(incomeAmount);
-
-let expensesTitle = document.querySelector('.expenses-title');
-console.log(expensesTitle);
-
-let expensesAmount = document.querySelector('.expenses-amount');
-console.log(expensesAmount);
-
-let additionalExpensesItem = document.querySelector('.additional_expenses-item');
-console.log(additionalExpensesItem);
-
-let targetAmount = document.querySelector('.target-amount');
-console.log(targetAmount);
-
-let periodSelect = document.querySelector('.period-select');
-console.log(periodSelect);
 
 
