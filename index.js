@@ -6,8 +6,7 @@ let isNumber = function(n) {
 let startBtn = document.getElementById('start'), 
 btnPlusIncomeAdd = document.getElementsByTagName('button') [0], 
 btnPlusExpensesAdd = document.getElementsByTagName('button') [1], 
-depositCheckmark = document.querySelector('#deposit-check'), 
-resultValue = document.getElementsByClassName('.result') , 
+depositCheckmark = document.querySelector('#deposit-check'),  
 salaryAmount = document.querySelector('.salary-amount'), 
 incomeTitle = document.querySelector('input.income-title'), 
 incomeAmount = document.querySelector('.income-amount'), 
@@ -15,13 +14,21 @@ expensesTitle = document.querySelector('input.expenses-title'),
 expensesAmount = document.querySelector('.expenses-amount'), 
 additionalExpensesItem = document.querySelector('.additional_expenses-item'), 
 targetAmount = document.querySelector('.target-amount'), 
-periodSelect = document.querySelector('.period-select');
+periodSelect = document.querySelector('.period-select'),
+
+budgetMonthValue = document.getElementsByClassName('.budget_month-value'), 
+budgetDayValue = document.getElementsByClassName('.budget_day-value'), 
+expensesMonthValue = document.getElementsByClassName('.expenses_month-value'), 
+additionalIncomeValue = document.getElementsByClassName('.additional_income-value'), 
+additionalExpensesValue = document.getElementsByClassName('.additional_expenses-value'), 
+incomePeriodValue = document.getElementsByClassName('.income_period-value'), 
+targetMonthValue = document.getElementsByClassName('.target_month-value');
+
 
 console.log(startBtn);
 console.log(btnPlusIncomeAdd);
 console.log(btnPlusExpensesAdd);
 console.log(depositCheckmark);
-console.log(resultValue);
 console.log(salaryAmount);
 console.log(incomeTitle);
 console.log(incomeAmount);
@@ -30,6 +37,14 @@ console.log(expensesAmount);
 console.log(additionalExpensesItem);
 console.log(targetAmount);
 console.log(periodSelect);
+
+console.log(budgetMonthValue);
+console.log(budgetDayValue);
+console.log(expensesMonthValue);
+console.log(additionalIncomeValue);
+console.log(additionalExpensesValue);
+console.log(incomePeriodValue);
+console.log(targetMonthValue);
 
 let money;
 let start = function() {
