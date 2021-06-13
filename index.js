@@ -16,13 +16,13 @@ additionalExpensesItem = document.querySelector('.additional_expenses-item'),
 targetAmount = document.querySelector('.target-amount'), 
 periodSelect = document.querySelector('.period-select'),
 
-budgetMonthValue = document.getElementsByClassName('.budget_month-value'), 
-budgetDayValue = document.getElementsByClassName('.budget_day-value'), 
-expensesMonthValue = document.getElementsByClassName('.expenses_month-value'), 
-additionalIncomeValue = document.getElementsByClassName('.additional_income-value'), 
-additionalExpensesValue = document.getElementsByClassName('.additional_expenses-value'), 
-incomePeriodValue = document.getElementsByClassName('.income_period-value'), 
-targetMonthValue = document.getElementsByClassName('.target_month-value');
+budgetMonthValue = document.getElementsByClassName('budget_month-value'), 
+budgetDayValue = document.getElementsByClassName('budget_day-value'), 
+expensesMonthValue = document.getElementsByClassName('expenses_month-value'), 
+additionalIncomeValue = document.getElementsByClassName('additional_income-value'), 
+additionalExpensesValue = document.getElementsByClassName('additional_expenses-value'), 
+incomePeriodValue = document.getElementsByClassName('income_period-value'), 
+targetMonthValue = document.getElementsByClassName('target_month-value');
 
 
 console.log(startBtn);
