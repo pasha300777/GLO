@@ -16,14 +16,13 @@ additionalExpensesItem = document.querySelector('.additional_expenses-item'),
 targetAmount = document.querySelector('.target-amount'), 
 periodSelect = document.querySelector('.period-select'),
 
-budgetMonthValue = document.getElementsByClassName('budget_month-value'), 
-budgetDayValue = document.getElementsByClassName('budget_day-value'), 
-expensesMonthValue = document.getElementsByClassName('expenses_month-value'), 
-additionalIncomeValue = document.getElementsByClassName('additional_income-value'), 
-additionalExpensesValue = document.getElementsByClassName('additional_expenses-value'), 
-incomePeriodValue = document.getElementsByClassName('income_period-value'), 
-targetMonthValue = document.getElementsByClassName('target_month-value');
-
+budgetMonthValue = document.getElementsByClassName('budget_month-value') [0], 
+budgetDayValue = document.getElementsByClassName('budget_day-value') [0], 
+expensesMonthValue = document.getElementsByClassName('expenses_month-value') [0], 
+additionalIncomeValue = document.getElementsByClassName('additional_income-value') [0], 
+additionalExpensesValue = document.getElementsByClassName('additional_expenses-value') [0], 
+incomePeriodValue = document.getElementsByClassName('income_period-value') [0], 
+targetMonthValue = document.getElementsByClassName('target_month-value') [0];
 
 console.log(startBtn);
 console.log(btnPlusIncomeAdd);
@@ -169,7 +168,6 @@ appData.getTargetMonth();
 appData.getStatusIncome();
 appData.getInfoDeposit();
 appData.calcSavedMoney();
-
 console.log(appData.getStatusIncome());
 
 console.log('Возможные расходы: ');
