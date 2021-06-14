@@ -10,6 +10,8 @@ depositCheckmark = document.querySelector('#deposit-check'),
 salaryAmount = document.querySelector('.salary-amount'), 
 incomeTitle = document.querySelector('input.income-title'), 
 incomeAmount = document.querySelector('.income-amount'), 
+
+additionalIncomeItem = document.querySelectorAll('.additional_income-item'), 
 expensesTitle = document.querySelector('input.expenses-title'), 
 expensesAmount = document.querySelector('.expenses-amount'), 
 additionalExpensesItem = document.querySelector('.additional_expenses-item'), 
@@ -31,12 +33,14 @@ console.log(depositCheckmark);
 console.log(salaryAmount);
 console.log(incomeTitle);
 console.log(incomeAmount);
+console.log(additionalIncomeItem[0]);
+console.log(additionalIncomeItem[1]);
 console.log(expensesTitle);
 console.log(expensesAmount);
 console.log(additionalExpensesItem);
 console.log(targetAmount);
 console.log(periodSelect);
-
+  
 console.log(budgetMonthValue);
 console.log(budgetDayValue);
 console.log(expensesMonthValue);
@@ -168,6 +172,7 @@ appData.getTargetMonth();
 appData.getStatusIncome();
 appData.getInfoDeposit();
 appData.calcSavedMoney();
+
 console.log(appData.getStatusIncome());
 
 console.log('Возможные расходы: ');
