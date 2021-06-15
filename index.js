@@ -10,7 +10,7 @@ expensesPlus = btnPlus[1],
 depositCheckmark = document.querySelector('#deposit-check'),  
 salaryAmount = document.querySelector('.salary-amount'), 
 incomeTitle = document.querySelector('input.income-title'),  
-incomeItems = document.querySelectorAll('.income-items'),
+incomeItems = document.querySelector('.income-items'),
 
 additionalIncomeItem = document.querySelectorAll('.additional_income-item'), 
 expensesTitle = document.querySelector('input.expenses-title'), 
@@ -18,7 +18,7 @@ expensesItems = document.querySelectorAll('.expenses-items'),
 additionalExpensesItem = document.querySelector('.additional_expenses-item'), 
 targetAmount = document.querySelector('.target-amount'), 
 periodSelect = document.querySelector('.period-select'),
-titlePeriodAmount = document.querySelector('.title period-amount'),
+titlePeriodAmount = document.querySelectorAll('.title period-amount'),
 
 budgetMonthValue = document.getElementsByClassName('budget_month-value') [0], 
 budgetDayValue = document.getElementsByClassName('budget_day-value') [0], 
@@ -179,14 +179,23 @@ incomePlus.addEventListener('click', appData.addIncomeBlock);
 
 let eventFunc = function(){
   console.log('period is: ' + periodSelect.value);
-  titlePeriodAmount = periodSelect.value;
   
+  // titlePeriodAmount.innerHTML = periodSelect.value;
+  // document.getElementById("1").innerHTML= 'periodSelect.value';
+  titlePeriodAmount.textContent = periodSelect.value;
+
 };
 eventFunc();
 
 periodSelect.addEventListener('input', eventFunc);
-
+// document.querySelector('.period-select').addEventListener('input', eventFunc);
 console.log(periodSelect.value);
+
+console.log('period title is: ' + titlePeriodAmount);
+
+
+
+
 
 // console.log(appData.getStatusIncome());
 
