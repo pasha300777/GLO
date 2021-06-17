@@ -183,22 +183,23 @@ periodSelect.addEventListener('input', eventFunc);
 console.log(incomeItem);
 
 let eventPeriodFunc = function(){
-  incomePeriodValue.textContent = titlePeriodAmount.value;
+  incomePeriodValue.textContent = periodSelect.value;
 };
 eventPeriodFunc();
-// titlePeriodAmount.addEventListener('input', eventPeriodFunc);
+periodSelect.addEventListener('input', eventPeriodFunc);
 console.log(incomePeriodValue);
 
+salaryAmount.addEventListener('input', btnLock);
 start.disabled = true;
 function btnLock(){
-  if(appData.salaryAmount != ''){
+  if(salaryAmount.value !== ''){
     start.disabled = false;
   }
   else{
     start.disabled = true;
   }
 };
-btnLock();
+
 
 // console.log('Возможные расходы: ');
 // for (let key in appData.addExpenses) {
