@@ -66,18 +66,18 @@ let appData = {
     });
   },
   addExpensesBlock: function(){
+    let expensesItems = document.querySelectorAll('.expenses-items');
     let cloneExpensesItem = expensesItems[0].cloneNode(true);
     expensesItems[0].parentNode.insertBefore(cloneExpensesItem, expensesPlus);
-    expensesItems = document.querySelectorAll('.expenses-items');
       if (expensesItems.length === 3){
         expensesPlus.style.display = 'none';
       }
   },
 
   addIncomeBlock: function(){
+    let incomeItem = document.querySelectorAll('.income-items');
     let cloneIncomeItem = incomeItem[0].cloneNode(true);
     incomeItem[0].parentNode.insertBefore(cloneIncomeItem, incomePlus);
-    incomeItem = document.querySelectorAll('.income-items');
       if (incomeItem.length === 3){
         incomePlus.style.display = 'none';
       }
@@ -143,18 +143,6 @@ let appData = {
     return targetAmount.value / appData.budgetMonth;
   },
 
-  // getStatusIncome: function(){
-  //   if(appData.budgetDay >= 1200){
-  //     return('У вас высокий уровень дохода');
-  //   }else if(appData.budgetDay <= 1200 && appData.budgetDay >= 600){
-  //     return('У вас средний уровень дохода');
-  //   }else if(appData.budgetDay <= 600 && appData.budgetDay >= 0){
-  //     return('К сожалению у вас уровень дохода ниже среднего');
-  //   }else {
-  //     return('Что то пошло не так');
-  //   };
-  // },
-
   getInfoDeposit: function(){
     if(appData.deposit) {
       do {
@@ -199,11 +187,5 @@ function btnLock(){
     start.disabled = true;
   }
 };
-
-
-// console.log('Возможные расходы: ');
-// for (let key in appData.addExpenses) {
-//   console.log('Свойство: ' + key + ', Значение: ' + appData.addExpenses[key]);
-// };
 
 
