@@ -61,8 +61,9 @@ let appData = {
     additionalExpensesValue.value = appData.addExpenses.join(', ');
     additionalIncomeValue.value = appData.addIncome.join(', ');
     targetMonthValue.value = Math.ceil(appData.getTargetMonth());
-    incomePeriodValue.value = appData.calcPeriod();
-    
+    periodSelect.addEventListener('input', function(){
+      incomePeriodValue.value = appData.calcPeriod();
+    });
   },
   addExpensesBlock: function(){
     let cloneExpensesItem = expensesItems[0].cloneNode(true);
@@ -126,7 +127,7 @@ let appData = {
    
   getExpensesMonth: function(){
     for (let key in appData.expenses) {
-      appData.expensesMonth += appData.expenses[key];
+      appData.expensesMonth += +appData.expenses[key];
     };
     console.log('Расходы за месяц: ' + appData.expensesMonth);
     return appData.expensesMonth;
@@ -186,7 +187,6 @@ let eventPeriodFunc = function(){
   incomePeriodValue.textContent = periodSelect.value;
 };
 eventPeriodFunc();
-periodSelect.addEventListener('input', eventPeriodFunc);
 console.log(incomePeriodValue);
 
 salaryAmount.addEventListener('input', btnLock);
