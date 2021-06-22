@@ -155,6 +155,37 @@ let appData = {
     return this.budgetMonth * periodSelect.value;
   },
   
+  incomeBlock: function(){
+    salaryAmount.disabled = true;
+    incomeTitle.disabled = true;
+    incomeItem.disabled = true;
+    incomeAmount.disabled = true;
+    additionalIncomeItem[0].disabled = true;
+    additionalIncomeItem[1].disabled = true;
+    expensesTitle.disabled = true;
+    expensesItems.disabled = true;
+    expensesAmount.disabled = true;
+    additionalExpensesItem.disabled = true;
+    targetAmount.disabled = true;
+    periodSelect.value = 1;
+
+  },
+  
+  incomeUnblock: function(){
+    salaryAmount.disabled = false;
+    incomeTitle.disabled = false;
+    incomeItem.disabled = false;
+    incomeAmount.disabled = false;
+    additionalIncomeItem[0].disabled = false;
+    additionalIncomeItem[1].disabled = false;
+    expensesTitle.disabled = false;
+    expensesItems.disabled = false;
+    expensesAmount.disabled = false;
+    additionalExpensesItem.disabled = false;
+    targetAmount.disabled = false;
+    periodSelect.value = 1;
+  },
+
   resetData: function(){
     appData.income = {};
     appData.incomeMonth = 0;
@@ -170,7 +201,7 @@ let appData = {
     appData.budgetMonth = 0; 
     appData.expensesMonth = 0;
     periodSelect.value = 1;
-    titlePeriodAmount.textContent = 0;
+    titlePeriodAmount.textContent = 1;
   },
   
   reset: function(){
@@ -202,6 +233,7 @@ let appData = {
 
 startBtn.addEventListener('click', function() {
   appData.start();
+  appData.incomeBlock();
   changeBtn();
 });
 expensesPlus.addEventListener('click', appData.addExpensesBlock);
@@ -242,9 +274,7 @@ function changeBtn2(){
 
 cancel.addEventListener('click', function(){
   appData.reset();
+  appData.incomeUnblock();
   changeBtn2();
 });
-
-
-
 
