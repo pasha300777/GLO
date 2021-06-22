@@ -19,7 +19,6 @@ additionalIncomeItem = document.querySelectorAll('.additional_income-item'),
 expensesTitle = document.querySelector('input.expenses-title'), 
 expensesItems = document.querySelectorAll('.expenses-items'),
 expensesAmount = document.querySelector('.expenses-amount'),
-
 additionalExpensesItem = document.querySelector('.additional_expenses-item'), 
 targetAmount = document.querySelector('.target-amount'), 
 periodSelect = document.querySelector('.period-select'),
@@ -166,6 +165,8 @@ let appData = {
     expensesAmount.disabled = true;
     additionalExpensesItem.disabled = true;
     targetAmount.disabled = true;
+    periodSelect.value = 1;
+
   },
   
   incomeUnblock: function(){
@@ -180,6 +181,13 @@ let appData = {
     expensesAmount.disabled = false;
     additionalExpensesItem.disabled = false;
     targetAmount.disabled = false;
+    periodSelect.value = 1;
+
+    appData.addIncome.splice(1,appData.addIncome.length);
+    appData.addExpenses.length = 0;
+    appData.income = {};
+    appData.expenses = {};
+    appData.addIncomeBlock.cloneIncomeItem.style.display = 'none';
   },
   
 };
