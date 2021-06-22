@@ -152,49 +152,54 @@ let appData = {
   calcPeriod: function(){
     return this.budgetMonth * periodSelect.value;
   },
-
-  incomeBlock: function(){
-    salaryAmount.disabled = true;
-    incomeTitle.disabled = true;
-    incomeItem.disabled = true;
-    incomeAmount.disabled = true;
-    additionalIncomeItem[0].disabled = true;
-    additionalIncomeItem[1].disabled = true;
-    expensesTitle.disabled = true;
-    expensesItems.disabled = true;
-    expensesAmount.disabled = true;
-    additionalExpensesItem.disabled = true;
-    targetAmount.disabled = true;
+  
+  resetData: function(){
+    appData.income = {};
+    appData.incomeMonth = 0;
+    appData.addIncome = [];
+    appData.expenses = {};
+    appData.addExpenses = [];
+    appData.deposit = false;
+    appData.percentDeposit = 0;
+    appData.moneyDeposit = 0;
+    appData.mission = 0;
+    appData.budget = 0;
+    appData.budgetDay = 0; 
+    appData.budgetMonth = 0; 
+    appData.expensesMonth = 0;
     periodSelect.value = 1;
-
   },
   
-  incomeUnblock: function(){
-    salaryAmount.disabled = false;
-    incomeTitle.disabled = false;
-    incomeItem.disabled = false;
-    incomeAmount.disabled = false;
-    additionalIncomeItem[0].disabled = false;
-    additionalIncomeItem[1].disabled = false;
-    expensesTitle.disabled = false;
-    expensesItems.disabled = false;
-    expensesAmount.disabled = false;
-    additionalExpensesItem.disabled = false;
-    targetAmount.disabled = false;
-    periodSelect.value = 1;
-
-    appData.addIncome.splice(1,appData.addIncome.length);
-    appData.addExpenses.length = 0;
-    appData.income = {};
-    appData.expenses = {};
-    appData.addIncomeBlock.cloneIncomeItem.style.display = 'none';
+  reset: function(){
+    const inputs = document.querySelectorAll('input');
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].value = '';
+    }
+    incomeItem = document.querySelectorAll('.income-items');
+    if (incomeItem.length > 1) {
+      for (let i = incomeItem.length - 1; i > 0 ; i--) {      
+      incomeItem[i].children[0].value = '';
+      incomeItem[i].children[1].value = '';
+      incomeItem[i].remove();
+      }
+    }
+    
+    expensesItems = document.querySelectorAll('.expenses-items');
+    if (expensesItems.length > 1) {
+      for (let i = expensesItems.length - 1; i > 0 ; i--) {      
+      expensesItems[i].children[0].value = '';
+      expensesItems[i].children[1].value = '';
+      expensesItems[i].remove();
+      }
+    }
+    appData.resetData()
   },
+  
   
 };
 
 startBtn.addEventListener('click', function() {
   appData.start();
-  appData.incomeBlock();
   changeBtn();
 });
 expensesPlus.addEventListener('click', appData.addExpensesBlock);
@@ -222,12 +227,6 @@ function btnLock(){
   }  
 };
 
-function reset(){
-  const inputs = document.querySelectorAll('input');
-  for (let i = 0; i < inputs.length; i++) {
-    inputs[i].value = '';
-  }
-};
 
 function changeBtn(){
   startBtn.style.display = 'none';
@@ -240,11 +239,6 @@ function changeBtn2(){
 }; 
 
 cancel.addEventListener('click', function(){
-  reset();
+  appData.reset();
   changeBtn2();
-  appData.incomeUnblock();
 });
-
-
-
-
