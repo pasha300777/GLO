@@ -47,9 +47,10 @@ let appData = {
   budgetMonth: 0, 
   expensesMonth: 0,
   
+
   start: function() {
     this.budget = +salaryAmount.value;
-  
+    
     this.getExpenses();
     this.getIncome();
     this.getExpensesMonth();
@@ -65,6 +66,7 @@ let appData = {
     additionalExpensesValue.value = this.addExpenses.join(', ');
     additionalIncomeValue.value = this.addIncome.join(', ');
     targetMonthValue.value = Math.ceil(this.getTargetMonth());
+    incomePeriodValue.value = this.calcPeriod();
     periodSelect.addEventListener('input', function(){
       incomePeriodValue.value = appData.calcPeriod();
     });
@@ -168,6 +170,7 @@ let appData = {
     appData.budgetMonth = 0; 
     appData.expensesMonth = 0;
     periodSelect.value = 1;
+    titlePeriodAmount.textContent = 0;
   },
   
   reset: function(){
@@ -194,7 +197,6 @@ let appData = {
     }
     appData.resetData()
   },
-  
   
 };
 
@@ -242,3 +244,7 @@ cancel.addEventListener('click', function(){
   appData.reset();
   changeBtn2();
 });
+
+
+
+
